@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="AppQrCode.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <forms:ZXingScannerView IsTorchOn="{Binding IsTorchOn}" IsScanning="{Binding IsScanning}" IsAnalyzing="{Binding IsScanning}" Result="{Binding Result, Mode=TwoWay}" ScanResultCommand="{Binding QRScanResultCommand}"></forms:ZXingScannerView>
+            <forms:ZXingDefaultOverlay TopText="Scan QrCode" BottomText="Scan QrCode" ShowFlashButton="True" FlashButtonClicked="OnFlashButtonClicked" Opacity="0.9"></forms:ZXingDefaultOverlay>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
