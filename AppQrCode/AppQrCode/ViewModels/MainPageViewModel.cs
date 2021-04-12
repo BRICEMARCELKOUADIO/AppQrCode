@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace AppQrCode.ViewModels
@@ -47,7 +49,7 @@ namespace AppQrCode.ViewModels
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Main Page";
+            Title = "SCAN QR CODE";
         }
 
         private void QRScanResult()
@@ -58,6 +60,10 @@ namespace AppQrCode.ViewModels
                 {
                     if (!string.IsNullOrEmpty(Result.Text))
                     {
+                        await OpenBrowser(new Uri(Result.Text));
+                    }
+                    else
+                    {
                         var parameters = new NavigationParameters
                         {
                             { "id", "id" },
@@ -66,12 +72,23 @@ namespace AppQrCode.ViewModels
                         await NavigationService.NavigateAsync("QrCodeResult", parameters).ConfigureAwait(false);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                 }
             });
         }
 
+        public async Task OpenBrowser(Uri uri)
+        {
+            try
+            {
+                await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                // An unexpected error occured. No browser may be installed on the device.
+            }
+        }
 
         public void OnPushFlashButton()
         {

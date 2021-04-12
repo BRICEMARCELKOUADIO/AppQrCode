@@ -17,7 +17,7 @@ namespace AppQrCode.ViewModels
         public QrCodeResultViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Qr Code Result";
+            Title = "Qr Code Error";
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
