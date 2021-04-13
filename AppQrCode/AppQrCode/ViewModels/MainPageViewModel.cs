@@ -67,7 +67,7 @@ namespace AppQrCode.ViewModels
                         var parameters = new NavigationParameters
                         {
                             { "id", "id" },
-                            { "QrCodeData", Result.Text },
+                            { "QrCodeData", "No content in this QrCode" },
                         };
                         await NavigationService.NavigateAsync("QrCodeResult", parameters).ConfigureAwait(false);
                     }
@@ -84,7 +84,7 @@ namespace AppQrCode.ViewModels
             {
                 await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // An unexpected error occured. No browser may be installed on the device.
             }
