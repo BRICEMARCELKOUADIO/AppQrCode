@@ -4,7 +4,7 @@
              xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False"
-             x:Class="AppQrCode.Views.MainPage"
+             x:Class="AppQrCode.Views.ScanQrCodeView"
              Title="{Binding Title}">
 
     <StackLayout>

@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace AppQrCode.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class ScanQrCodeViewModel : ViewModelBase
     {
         private ZXing.Result _result;
         public ZXing.Result Result
@@ -46,7 +46,7 @@ namespace AppQrCode.ViewModels
 
         public ICommand QRScanResultCommand => new DelegateCommand(QRScanResult);
 
-        public MainPageViewModel(INavigationService navigationService)
+        public ScanQrCodeViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "SCAN QR CODE";

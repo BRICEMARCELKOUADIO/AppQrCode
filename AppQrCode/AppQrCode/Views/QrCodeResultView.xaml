@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Background="red"
              x:Class="AppQrCode.Views.QrCodeResultView">
     <ContentPage.Content>
-        <StackLayout Background="red" >
-            <Label Text="{Binding QrCodeResult}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" 
+        <StackLayout >
+            <Label Text="{Binding QrCodeResult}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Red" 
                    FontSize="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

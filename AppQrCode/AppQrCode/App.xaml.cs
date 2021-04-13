@@ -19,7 +19,7 @@ namespace AppQrCode
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/ScanQrCodeView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -27,7 +27,7 @@ namespace AppQrCode
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<ScanQrCodeView, ScanQrCodeViewModel>();
             containerRegistry.RegisterForNavigation<QrCodeResultView, QrCodeResultViewModel>("QrCodeResult");
 
         }

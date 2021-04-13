@@ -5,16 +5,16 @@ using Xamarin.Forms;
 
 namespace AppQrCode.Views
 {
-    public partial class MainPage
+    public partial class ScanQrCodeView
     {
-        public MainPage()
+        public ScanQrCodeView()
         {
             InitializeComponent();
         }
 
         private void OnFlashButtonClicked(Button sender, EventArgs e)
         {
-            ((MainPageViewModel)BindingContext).OnPushFlashButton();
+            ((ScanQrCodeViewModel)BindingContext).OnPushFlashButton();
         }
     }
 }
