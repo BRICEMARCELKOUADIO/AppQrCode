@@ -1,3 +1,4 @@
+using AppQrCode.Models;
 using AppQrCode.ViewModels;
 using AppQrCode.Views;
 using Prism;
@@ -8,13 +9,16 @@ using Xamarin.Forms;
 
 namespace AppQrCode
 {
+    [Preserve(AllMembers = true)]
     public partial class App
     {
+        [Preserve(AllMembers = true)]
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
         }
 
+        [Preserve(AllMembers = true)]
         protected override async void OnInitialized()
         {
             InitializeComponent();
