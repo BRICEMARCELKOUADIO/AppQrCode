@@ -5,9 +5,8 @@
              x:Class="AppQrCode.Views.QrCodeResultView">
     <ContentPage.Content>
         <StackLayout Background="red" >
-            <Label Text="{Binding QrCodeResult}" TextColor="White" FontSize="20"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding QrCodeResult}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" 
+                   FontSize="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

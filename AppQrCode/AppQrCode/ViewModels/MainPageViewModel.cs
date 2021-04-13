@@ -67,13 +67,19 @@ namespace AppQrCode.ViewModels
                         var parameters = new NavigationParameters
                         {
                             { "id", "id" },
-                            { "QrCodeData", "No content in this QrCode" },
+                            { "QrCodeData", "Aucun contenu dans ce QrCode" },
                         };
                         await NavigationService.NavigateAsync("QrCodeResult", parameters).ConfigureAwait(false);
                     }
                 }
                 catch (Exception)
                 {
+                    var parameters = new NavigationParameters
+                        {
+                            { "id", "id" },
+                            { "QrCodeData", "Une erreur inconnue s'est produite, assurez-vous de scanner le bon QrCode" },
+                        };
+                    await NavigationService.NavigateAsync("QrCodeResult", parameters).ConfigureAwait(false);
                 }
             });
         }
@@ -86,7 +92,12 @@ namespace AppQrCode.ViewModels
             }
             catch (Exception)
             {
-                // An unexpected error occured. No browser may be installed on the device.
+                var parameters = new NavigationParameters
+                        {
+                            { "id", "id" },
+                            { "QrCodeData", "Aucun navigateur trouvé sur votre mobile" },
+                        };
+                await NavigationService.NavigateAsync("QrCodeResult", parameters).ConfigureAwait(false);
             }
         }
 
